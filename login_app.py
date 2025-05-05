@@ -8,19 +8,17 @@ def mostrar_tela_de_login():
     login_button = st.button("Entrar")
 
     if login_button:
-        USUARIOS_VALIDOS = {"admin": "123"}  # Credenciais de login válidas
+        USUARIOS_VALIDOS = {"admin": "123"} 
         if username.lower() in USUARIOS_VALIDOS and USUARIOS_VALIDOS[username.lower()] == password:
-            # Login bem-sucedido: define o estado de login como True
             st.success("Login realizado com sucesso!")
             st.session_state.logged_in = True
             st.session_state.username = username.lower()
-            st.rerun()  # Força a atualização da página
+            st.rerun()
         else:
             st.error("Utilizador ou senha incorretos.")
 
 def mostrar_pagina_principal(container):
     """Exibe a página principal após o login."""
-    # Define a largura máxima do container para ocupar mais espaço na tela
     container.markdown(
         """
         <style>
@@ -73,13 +71,11 @@ def mostrar_pagina_principal(container):
         unsafe_allow_html=True,
     )
 
-# Inicializa o estado de login
+
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
-
-# Lógica principal para exibir a tela de login
-col1, col2, col3 = st.columns([1, 2, 1])  # Divide a página em 3 colunas
-with col2:  # Centraliza o conteúdo na coluna do meio
+col1, col2, col3 = st.columns([1, 2, 1]) 
+with col2:
     if not st.session_state.logged_in:
         mostrar_tela_de_login()
     else:
