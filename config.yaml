@@ -1,0 +1,26 @@
+cookie:
+  expiry_days: 1
+  key: tperaro  # Must be a string
+  name: cookies_sao_bons
+credentials:
+  usernames:
+    tperaro:
+      email: perarothiago@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      first_name: Thiago
+      last_name: Peraro
+      logged_in: False # Will be managed automatically
+      password: tperaro # Will be hashed automatically
+      roles: # Optional
+      - admin
+      - editor
+      - viewer
+    pedrao:
+      email: pedroeoandrade@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      first_name: Pedro
+      last_name: Andrade
+      logged_in: False # Will be managed automatically
+      password: abc123 # Will be hashed automatically
+      roles: # Optional
+      - viewer
